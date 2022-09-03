@@ -23,7 +23,7 @@
 	<meta name="msapplication-TileColor" content="#da532c">
 	<meta name="theme-color" content="#ffffff">
 	
-	<title>Врач телемедицины</title>
+	<title>Диспетчер пожарно-спасательной службы</title>
 	<link rel="stylesheet" href="css/style.min.css">
 </head>
 
@@ -46,11 +46,12 @@
 						</li>
 						<li class="header-list-inner">
 							<a href="#" class="header-list-link">
-								Профпробы
+								<img src="./img/header/prof.svg" alt="" class="header-list-img">
 							</a>
 						</li>
 						<li class="header-list-inner">
-							Врач телемедицины
+							Диспетчер пожарно-спасательной службы
+							<img width="8" height="10" src="./img/header/union.svg" alt="" class="header-list-inner-img">
 						</li>
 					</ul>
 					<div class="header-col">
@@ -102,29 +103,34 @@
 				<div class="main-wrap">
 					<div class="main-box">
 						<div class="main-box-head">
-							<div class="avatar-box">
-								<img src="./img/main/patient.png" alt="" class="avatar">
-							</div>
-							<div class="main-box-coll">
-								<h3 class="patient-name">
-									Пациент Штро Анна
-								</h3>
-								<div class="main-box-row">
-									<ul class="main-list">
-										<li class="main-list-inner --status">
-											онлайн
-										</li>
-										<li class="main-list-inner">
-											первое обращение
-										</li>
-									</ul>
-									<div class="cart-number">
-										Медицинская карта №345-6347
-									</div>
-								</div>
-							</div>
+							<h3 class="main-head-subtitle">
+								Часть 1: Приём дежурства
+							</h3>
+							<h4 class="main-head-title">
+								Проверка техники, документации и спецобъектов
+							</h4>
 						</div>
-						<div class="main-chat">
+						<div class="main-box-body">
+							<p class="main-box-title">
+								Чтобы понимать, какими силами сегодня обладает гарнизон пожарной охраны города, вам вместе с
+								начальником караула необходимо проверить готовность пожарной техники, оборудования и средств
+								пожаротушения.
+							</p>
+							<p class="main-box-text">
+								Также в каждом населённом пункте страны есть особые объекты социальной сферы: больницы,
+								интернаты,
+								дома престарелых и другие важные учреждения.
+							</p>
+		
+							<p class="main-box-text">
+								Ежедневно вы фиксируете информацию о количестве людей, которые могут там находиться — это
+								поможет спасти чью-то жизнь, если пожарному расчёту придётся эвакуировать пострадавших из этих
+								зданий.
+							</p>
+							<img src="./img/main/main-box.jpg" alt="" class="main-box-img">
+							<button class="main-box-btn">
+								Заполнить журнал
+							</button>
 						</div>
 					</div>
 					<div class="main-panel">
@@ -137,137 +143,165 @@
 							</p>
 						</div>
 						<div class="main-panel-body ">
-							<div class="accardion">
-								<button class="accardion-head complaints  --back-color btn-error no-active "
-									data-error="standart-error">
-									<span class="accardion-head-span complaints-accordion-info ">
-										Собрать жалобы 0/4
-									</span>
-									<svg class="accardion-svg" width="14" height="8" viewBox="0 0 14 8" fill="none"
-										xmlns="http://www.w3.org/2000/svg">
-										<path
-											d="M0.999969 1L6.29286 6.29289C6.68339 6.68342 7.31655 6.68342 7.70708 6.29289L13 1"
-											stroke="#75797B" stroke-width="2" />
-									</svg>
-								</button>
-								<div class="accardion-body">
-									<div class="accardion-body-wrapp">
-										<button class="accordion-btn button-click" data-indicator="complaints"
-											data-info="temperature">
-											Температура
-										</button>
-										<button class="accordion-btn  button-click" data-indicator="complaints"
-											data-info="pain">
-											Боль в горле
-										</button>
-										<button class="accordion-btn   button-click" data-indicator="complaints"
-											data-info="сough">
-											Кашель
-										</button>
-										<button class=" accordion-btn button-click" data-indicator="complaints"
-											data-info="runny">
-											Насморк
-										</button>
+							<button class="button-click main-panel-btn" data-error="standart-error" data-indicator="complaints"
+								data-info="temperature">
+								<span>
+									Проверить пожарную технику
+								</span>
+		
+							</button>
+							<button class="button-click main-panel-btn" data-error="standart-error" data-indicator="complaints"
+								data-info="temperature">
+								<span>
+									Проверить боевую одежду<br>
+									и средства пожаротушения
+								</span>
+							</button>
+							<button class="button-click main-panel-btn " data-error="standart-error" data-indicator="complaints"
+								data-info="temperature">
+								<span>
+									Запросить информацию<br>
+									о количестве людей на спецобъектах
+								</span>
+							</button>
+						</div>
+						<div class="main-chat">
+		
+							<div class="main-chat-error">
+								<div class="main-error-row">
+									<div class="main-error-coll">
+										<h3 class="main-error-title">
+											Вы заступили на смену
+										</h3>
+										<p class="main-error-text">
+											Выполните ряд обязательных действий,чтобы принять дежурство
+										</p>
+		
 									</div>
-								</div>
-							</div>
-							<div class="accardion">
-								<button class="accardion-head diagnoz --back-color btn-error no-active   "
-									data-error="diagnoz-error">
-									<span class="accardion-head-span diagonz-head-info">
-										Установить вероятный диагноз 0/1
-									</span>
-									<svg class="accardion-svg" width="14" height="8" viewBox="0 0 14 8" fill="none"
-										xmlns="http://www.w3.org/2000/svg">
-										<path
-											d="M0.999969 1L6.29286 6.29289C6.68339 6.68342 7.31655 6.68342 7.70708 6.29289L13 1"
-											stroke="#75797B" stroke-width="2" />
-									</svg>
-								</button>
-								<div class="accardion-body">
-									<div class="accardion-body-wrapp ">
-										<button class="accordion-btn btn-incorrect" data-indicator="diagnoz"
-											data-incorrect="incorrect-answer">
-											Вероятно, это ангина
-										</button>
-										<button class="accordion-btn doctor-task" data-indicator="diagnoz"
-											data-task="correct-answer">
-											Вероятно, это фарингит
-										</button>
+									<div class="avatar-box">
+										<img src="./img/main/error.png" alt="" class="avatar">
 									</div>
 								</div>
 							</div>
 		
-							<a href="#" class="cart open-modal main-panel-btn btn-error --back-color no-active"
-								data-error="cart-error">
-								Заполнить медкарту 0/2
-							</a>
-							<div class="accardion">
-								<button class="accardion-head recom  --back-color btn-error no-active" data-error="recom-error">
-									<span class="accardion-head-span recom-box-info ">
-										Дать рекомендацию 0/2
-									</span>
-									<svg class="accardion-svg" width="14" height="8" viewBox="0 0 14 8" fill="none"
-										xmlns="http://www.w3.org/2000/svg">
-										<path
-											d="M0.999969 1L6.29286 6.29289C6.68339 6.68342 7.31655 6.68342 7.70708 6.29289L13 1"
-											stroke="#75797B" stroke-width="2" />
-									</svg>
-								</button>
-								<div class="accardion-body">
-									<div class="accardion-body-wrapp ">
-										<button class="accordion-btn doctor-task" data-indicator="recom"
-											data-task="generalRecommendations">
-											Общие рекомендации
-										</button>
-										<button class="accordion-btn  doctor-task" data-indicator="recom"
-											data-task="faceToFaceReception">
-											Сходить на очный приём
-										</button>
+							<div class="main-chat-row">
+								<div class="avatar-box">
+									<img src="./img/main/dispatcher.png" alt="" class="avatar">
+								</div>
+								<div class="main-chat-coll">
+									<div class="main-chat-head">
+										<div class="main-chat-name">
+											Диспетчер
+										</div>
+										<div class="main-chat-time">
+											10:12
+										</div>
+									</div>
+									<div class="main-chat-text">
+										Запрашиваю готовность автоцистерн АЦ-3-40, АЦ-5-40 и автолестницы АЛ-30 к боевому
+										дежурству.
 									</div>
 								</div>
 							</div>
-							<div class="accardion ">
-								<button class="accardion-head  anamnesis --back-color no-active  btn-error "
-									data-error="standart-error">
-									<span class="accardion-head-span anamnesis-info">
-										Собрать анамнез 0/4
-									</span>
-									<svg class="accardion-svg" width="14" height="8" viewBox="0 0 14 8" fill="none"
-										xmlns="http://www.w3.org/2000/svg">
-										<path
-											d="M0.999969 1L6.29286 6.29289C6.68339 6.68342 7.31655 6.68342 7.70708 6.29289L13 1"
-											stroke="#75797B" stroke-width="2" />
-									</svg>
-								</button>
-								<div class="accardion-body">
-									<div class="accardion-body-wrapp ">
-										<button class="accordion-btn  button-click" data-indicator="anamnesis"
-											data-info="startDisease">
-											Начало болезни
-										</button>
-										<button class="accordion-btn  button-click" data-indicator="anamnesis"
-											data-info="currentDisease">
-											Текущее лечение
-										</button>
-										<button class="accordion-btn  button-click" data-indicator="anamnesis"
-											data-info="epidemiologicalEnvironment">
-											Эпидемиологическое окружение
-										</button>
-										<button class="accordion-btn  button-click" data-indicator="anamnesis"
-											data-info="otherDisease">
-											Другие заболевания
-										</button>
+		
+							<div class="main-chat-row">
+								<div class="avatar-box">
+									<img src="./img/main/fireman.png" alt="" class="avatar">
+								</div>
+								<div class="main-chat-coll">
+									<div class="main-chat-head">
+										<div class="main-chat-name">
+											Начальник караула
+										</div>
+										<div class="main-chat-time">
+											10:14
+										</div>
+									</div>
+									<div class="main-chat-text">
+										Техника в полном порядке, к дежурству готова.
 									</div>
 								</div>
 							</div>
-							<button class="button-click main-panel-btn foto-btn --back-color no-active btn-error"
-								data-error="standart-error" data-indicator="fotoBtn" data-info="fotoBtn">
-								Запросить фотографию горла 0/1
-							</button>
-							<button class="main-panel-btn repeat --back-color no-active btn-error" data-error="standart-error">
-								Предложить повторную консультацию
-							</button>
+		
+							<div class="main-chat-row">
+								<div class="avatar-box">
+									<img src="./img/main/dispatcher.png" alt="" class="avatar">
+								</div>
+								<div class="main-chat-coll">
+									<div class="main-chat-head">
+										<div class="main-chat-name">
+											Диспетчер
+										</div>
+										<div class="main-chat-time">
+											10:12
+										</div>
+									</div>
+									<div class="main-chat-text">
+										Запрашиваю готовность автоцистерн АЦ-3-40, АЦ-5-40 и автолестницы АЛ-30 к боевому
+										дежурству.
+									</div>
+								</div>
+							</div>
+		
+							<div class="main-chat-row">
+								<div class="avatar-box">
+									<img src="./img/main/fireman.png" alt="" class="avatar">
+								</div>
+								<div class="main-chat-coll">
+									<div class="main-chat-head">
+										<div class="main-chat-name">
+											Начальник караула
+										</div>
+										<div class="main-chat-time">
+											10:14
+										</div>
+									</div>
+									<div class="main-chat-text">
+										Техника в полном порядке, к дежурству готова.
+									</div>
+								</div>
+							</div>
+		
+							<div class="main-chat-row">
+								<div class="avatar-box">
+									<img src="./img/main/dispatcher.png" alt="" class="avatar">
+								</div>
+								<div class="main-chat-coll">
+									<div class="main-chat-head">
+										<div class="main-chat-name">
+											Диспетчер
+										</div>
+										<div class="main-chat-time">
+											10:12
+										</div>
+									</div>
+									<div class="main-chat-text">
+										Запрашиваю готовность автоцистерн АЦ-3-40, АЦ-5-40 и автолестницы АЛ-30 к боевому
+										дежурству.
+									</div>
+								</div>
+							</div>
+		
+							<div class="main-chat-row">
+								<div class="avatar-box">
+									<img src="./img/main/fireman.png" alt="" class="avatar">
+								</div>
+								<div class="main-chat-coll">
+									<div class="main-chat-head">
+										<div class="main-chat-name">
+											Начальник караула
+										</div>
+										<div class="main-chat-time">
+											10:14
+										</div>
+									</div>
+									<div class="main-chat-text">
+										Техника в полном порядке, к дежурству готова.
+									</div>
+								</div>
+							</div>
+		
+		
 		
 						</div>
 					</div>
@@ -275,154 +309,7 @@
 			</div>
 		</main>
 	</div>
-	<div id="etap" class="etap mfp-hide">
-	
-		<button class="popup-close etap-close-btn">
-			<svg class="popup-svg" width="25" height="25" viewBox="0 0 25 25" fill="none"
-				xmlns="http://www.w3.org/2000/svg">
-				<path d="M9.89075e-07 1.41421L1.41421 0L24.0416 22.6274L22.6274 24.0416L9.89075e-07 1.41421Z"
-					fill="white" />
-				<path d="M22.6274 0L24.0416 1.41421L1.41421 24.0416L0 22.6274L22.6274 0Z" fill="white" />
-			</svg>
-	
-		</button>
-	
-		<div class="etap-wrap">
-			<div class="etap-col">
-				<h3 class="etap-title">
-					Вы уверены, что хотите
-					завершить практический этап?
-				</h3>
-				<p class="etap-text">
-					Неважно, как далеко вы продвинулись в выполнении профпробы — вы перейдёте сразу к финалу. Там вы сможете
-					подвести итоги, узнать ещё много интересного о профессии и даже получить артефакт специалиста!
-				</p>
-				<p class="etap-text">
-					Не переживайте, если успели не всё. Скоро все профпробы станут доступны в вашем личном кабинете проекта
-					«Билет в будущее» — об этом вам сообщат педагоги.
-				</p>
-			</div>
-			<img class="etap-img" src="./img/popup.png" alt="">
-		</div>
-		<div class="etap-row">
-			<button class="etap-btn popup-close ">
-				Отмена
-			</button>
-			<button class="etap-btn">
-				Завершить
-			</button>
-		</div>
-	</div>
-	
-	<div id="medical-card" class="medical  mfp-hide">
-		<button class="popup-close etap-close-btn">
-			<svg class="popup-svg" width="25" height="25" viewBox="0 0 25 25" fill="none"
-				xmlns="http://www.w3.org/2000/svg">
-				<path d="M9.89075e-07 1.41421L1.41421 0L24.0416 22.6274L22.6274 24.0416L9.89075e-07 1.41421Z"
-					fill="white" />
-				<path d="M22.6274 0L24.0416 1.41421L1.41421 24.0416L0 22.6274L22.6274 0Z" fill="white" />
-			</svg>
-	
-		</button>
-		<div class="medical-info">
-			<div class="medical-num">
-				<div class="medical-cart-number">
-					Медицинская карта
-				</div>
-				<div class="medical-cart-number">
-					№345-6347
-				</div>
-			</div>
-			<div class="madical-name">
-				Штро Анна Сергеевна
-			</div>
-			<h3 class="medical-info-title">
-				Пол
-			</h3>
-			<p class="medical-info-text">
-				женский
-			</p>
-			<h3 class="medical-info-title">
-				Возраст
-			</h3>
-			<p class="medical-info-text">
-				28 лет
-			</p>
-			<h3 class="medical-info-title">
-				Полис ОМС
-			</h3>
-			<p class="medical-info-text">
-				ХХХХ 7876 5565 5331
-			</p>
-			<h3 class="medical-info-title">
-				СНИЛС
-			</h3>
-			<p class="medical-info-text">
-				ХХХ-456-123 45
-			</p>
-	
-		</div>
-		<div class="medical-form">
-			<div class="medical-box-btn">
-				<button class="medical-form-btn complaints-form-btn active btn-error no-active  deactivate"
-					data-tab="tab-1">
-					Жалобы
-				</button>
-				<button class="medical-form-btn anamnesis-form-btn btn-error no-active  deactivate" data-tab="tab-2">
-					Анамнез
-				</button>
-				<button class="medical-form-btn no-active  deactivate  btn-error" data-tab="tab-3">
-					Общий осмотр
-				</button>
-				<button class="medical-form-btn no-active diagnoz-form-btn   deactivate btn-error" data-tab="tab-4">
-					Диагноз
-				</button>
-			</div>
-			<div id="tab-1" class="medical-tab active">
-				<div class="medical-tab-title">
-					Проверьте данные в медкарте и нажмите кнопку «Сохранить»
-				</div>
-				<div class="medical-textara complaints-form-info">
-				</div>
-			</div>
-			<div id="tab-2" class="medical-tab ">
-				<div class="medical-tab-title">
-					Проверьте данные в медкарте и нажмите кнопку «Сохранить»
-				</div>
-				<div class="medical-textara anamnesis-form-info">
-	
-				</div>
-			</div>
-			<div id="tab-3" class="medical-tab ">
-				<div class="medical-tab-title">
-					Проверьте данные в медкарте и нажмите кнопку «Сохранить»
-				</div>
-				<div class="medical-textara"> </div>
-			</div>
-			<div id="tab-4" class="medical-tab ">
-				<div class="medical-tab-title">
-					Проверьте данные в медкарте и нажмите кнопку «Сохранить»
-				</div>
-				<div class="medical-textara diagnoz-form-input "></div>
-			</div>
-	
-			<div class="medical-form-row">
-				<div class="medical-row-coll">
-					<div class="medical-row-date">
-						Дата начала наблюдения
-					</div>
-					<div class="medical-row-date">
-						10.09.2022
-					</div>
-				</div>
-				<button class="medical-sabe popup-close">
-					Сохранить
-				</button>
-			</div>
-	
-		</div>
-	</div>
-	
+	<!---->
 	<div id="medical-card-1" class="medical  mfp-hide">
 		<img src="./img/test.png" alt="">
 	</div>
