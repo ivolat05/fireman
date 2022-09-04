@@ -49,6 +49,287 @@ $(function () {
 		}
 	}
 
+	let jobStart = [
+		{
+			"nameChat": "job-chat",
+			"name": "<span class='color-fix'>Единая диспетчерская</span> ",
+			"foto": "./img/job/job-disp.png",
+			"dialog": `Информация направлена`,
+
+		},
+		{
+			"nameChat": "job-chat",
+			"name": "Диспетчер 24 ПЧ",
+			"foto": "./img/main/dispatcher.png",
+			"dialog": `Информация принята`,
+
+		},
+	]
+	let firemanChat = [
+		{
+			"nameChat": "job-chat",
+			"name": "Диспетчер 24 ПЧ",
+			"foto": "./img/main/dispatcher.png",
+			"dialog": `Следуем к месту происшествия `,
+
+		},
+		{
+			"nameChat": "job-chat",
+			"name": "Диспетчер 24 ПЧ",
+			"foto": "./img/main/dispatcher.png",
+			"dialog": `Проверка связи`,
+
+		},
+		{
+			"nameChat": "job-chat",
+			"name": "Диспетчер 24 ПЧ",
+			"foto": "./img/main/dispatcher.png",
+			"dialog": `Следуем к месту происшествия`,
+
+		},
+		{
+			"nameChat": "job-chat",
+			"name": "Диспетчер 24 ПЧ",
+			"foto": "./img/main/dispatcher.png",
+			"dialog": `Прибыли на место происшествия`,
+
+		},
+		{
+			"nameChat": "job-chat",
+			"name": "Диспетчер 24 ПЧ",
+			"foto": "./img/main/dispatcher.png",
+			"dialog": `Угроз на месте происшествия не обнаружено`,
+
+		},
+		{
+			"nameChat": "job-chat",
+			"name": "Диспетчер 24 ПЧ",
+			"foto": "./img/main/dispatcher.png",
+			"dialog": `Возвращается в подразделение`,
+
+		},
+		{
+			"nameChat": "job-chat",
+			"name": "Диспетчер 24 ПЧ",
+			"foto": "./img/main/dispatcher.png",
+			"dialog": `В части, готов к выезду`,
+
+		},
+		{
+			"nameChat": "job-chat",
+			"name": "<span class='color-fix'>Единая диспетчерская</span> ",
+			"foto": "./img/job/job-disp.png",
+			"dialog": `Хорошо, приняли`,
+
+		},
+
+	]
+
+	let jobError = {
+		"img": "./img/main/error.png",
+		"title": "Тревога",
+		"text": `Ваша задача — поддерживать связь с пожарным расчётом по рации и фиксировать всю
+		поступающую от него информацию в системе. Следите за сообщениями и выбирайте
+		подходящие варианты действий.`,
+	}
+
+
+	let firemanDil = [{
+		"text": "Выехали на вызов, следуем к месту происшествия"
+	},
+	{
+		"text": " Проверка связи, приём"
+	},
+	{
+		"text": " Свернули на Калининскую, следуем дальше "
+	},
+	{
+		"text": " Прибыли на место вызова, пожара и дыма не наблюдаем"
+	},
+	{
+		"text": "  Всё проверили, возгораний и угрозы людям не обнаружили, сигнализация сработала из-за задымления на кухне при разогревании еды"
+	},
+	{
+		"text": " Возвращаемся обратно"
+	},
+	{
+		"text": " Прибыли в пожарную часть, готовы к выездам"
+	},
+	]
+
+	let answer = [
+		"Следуем к месту",
+		"Проверка связи",
+		"Следуем к месту",
+		"Прибыли",
+		"Ничего не обнаружили",
+		"Возвращение в подразделение",
+		"В части готов",
+	]
+
+	// рвсчет
+	function firemanDialog(text) {
+		let blockText = document.querySelector('.job-dialog-chat');
+		blockText.textContent = text
+	}
+
+
+	// job start
+	function jobStarts() {
+		let startTime = 0;
+		for (let i = 0; i <= jobStart.length; i++) {
+			startTime += 2000;
+			if (i == 2) {
+
+				setTimeout(() => {
+					error('job-chat', jobError.img, jobError.title, jobError.text)
+
+				}, startTime)
+			} else {
+				setTimeout(() => {
+					dialog(jobStart[i].nameChat, jobStart[i].foto, jobStart[i].name, jobStart[i].dialog, getCurrentTimeString2(Math.round(Date.now() / 1000)))
+
+				}, startTime)
+			}
+		}
+		startTime += 2000;
+		setTimeout(() => {
+			firemanDialog(firemanDil[0].text)
+			jobFire()
+		}, startTime)
+
+	}
+
+	function jobStated() {
+		let btn = document.querySelector('.accidents-pop-btn');
+		btn.addEventListener('click', () => {
+			jobStarts();
+		})
+	}
+	jobStated()
+
+
+	function jobFire() {
+		let jobBtn = document.querySelectorAll('.job-btn');
+		let index = 0;
+		let num = 0;
+		let jobMapMarker = document.querySelector('.job-map-marker');
+		let indicator = true;
+		jobBtn.forEach(item => {
+			item.addEventListener('click', () => {
+				if (indicator) {
+					indicator = false;
+					let dataArr = item.getAttribute('data-answer');
+					let dataBlock = item.getAttribute('data-block');
+
+					if (answer[index] == dataArr) {
+
+						if (index == 0) {
+							jobMapMarker.style.transform = 'translate(-140%,-140%';
+							jobMapMarker.style.top = '68%';
+						} else if (index == 1) {
+							jobMapMarker.style.transform = 'rotate(-90deg)';
+							jobMapMarker.style.top = '12%';
+							jobMapMarker.style.left = '50%';
+
+						} else if (index == 2) {
+							jobMapMarker.style.transform = 'rotate(-17deg)';
+							jobMapMarker.style.top = '38%';
+							jobMapMarker.style.left = '29%';
+
+						} else if (index == 3) {
+							jobMapMarker.style.transform = 'rotate(-17deg)';
+							jobMapMarker.style.top = '24%';
+							jobMapMarker.style.left = '14%';
+
+						} else if (index == 6) {
+							jobMapMarker.style.transform = 'rotate(0deg)';
+							jobMapMarker.style.top = '74%';
+							jobMapMarker.style.left = '61%';
+
+						}
+
+
+						if (index == 6) {
+							setTimeout(() => {
+								dialog(firemanChat[index].nameChat, firemanChat[index].foto, firemanChat[index].name, firemanChat[index].dialog, getCurrentTimeString2(Math.round(Date.now() / 1000)))
+								scrollBottomTwo()
+								index += 1;
+								setTimeout(() => {
+									dialog(firemanChat[index].nameChat, firemanChat[index].foto, firemanChat[index].name, firemanChat[index].dialog, getCurrentTimeString2(Math.round(Date.now() / 1000)))
+									scrollBottomTwo()
+
+								}, 1000)
+
+								let jobFon = document.querySelector('.job-fon');
+
+								setTimeout(() => {
+									jobFon.classList.add('--active');
+
+								}, 2500)
+
+							}, 500)
+						} else {
+							setTimeout(() => {
+								dialog(firemanChat[index].nameChat, firemanChat[index].foto, firemanChat[index].name, firemanChat[index].dialog, getCurrentTimeString2(Math.round(Date.now() / 1000)))
+								scrollBottomTwo()
+								index += 1;
+							}, 500)
+							setTimeout(() => {
+								firemanDialog(firemanDil[index].text)
+							}, 1000)
+
+						}
+
+						indicator = true;
+						if (dataBlock == 'status') {
+							let statusInfo = document.querySelector('.status-info');
+							num += 1;
+							statusInfo.textContent = `Статус ${num}/5`
+							if (num >= 5) {
+								statusInfo.textContent = `Статус 5/5`
+							}
+						}
+						if (dataBlock == 'path-car') {
+							let statusInfo = document.querySelector('.path-car-info');
+							statusInfo.textContent = `В пути следования 1/1`
+						}
+						if (dataBlock == 'completion') {
+							let statusInfo = document.querySelector('.completion-info');
+							statusInfo.textContent = `Завершение 1/1`
+						}
+
+					} else {
+
+						let elem = document.createElement("div");
+						elem.classList.add('error');
+						elem.innerHTML =
+							`
+							<div class="error-box-img">
+							<img src="./img/error.svg" alt="" class="error-img">
+						</div>
+						<div class="error-coll">
+							<h3 class="error-title">
+								Ой, это неверный вариант!
+							</h3>
+							<p class="error-text">
+								Попробуйте другой или загляните в справочник
+							</p>
+						</div>
+		`
+						item.appendChild(elem);
+						setTimeout(() => {
+							let del = document.querySelectorAll('.error');
+							del.forEach(item => {
+								item.remove();
+							})
+							indicator = true;
+						}, 1200)
+					}
+				}
+			})
+		})
+	}
 
 	// start
 	function startProject() {
@@ -154,6 +435,7 @@ $(function () {
 					modalAct.classList.add('--active');
 				}, 3000)
 			}
+
 		})
 	}
 	modalDeActive('.tech-page-btn', '.tech-fon', '.tech-bck', '.accidents');
@@ -288,6 +570,25 @@ $(function () {
 		window.setInterval(function () {
 			if (!isPaused) {
 				$(".main-chat").scrollTop($(".main-chat")[0].scrollHeight);
+			}
+		}, 500);
+	}
+	function scrollBottomTwo() {
+
+		var timer;
+		var isPaused = false;
+
+		$(window).on('wheel', function () {
+			isPaused = true;
+			clearTimeout(timer);
+			timer = window.setTimeout(function () {
+				isPaused = false;
+			}, 10000);
+		});
+
+		window.setInterval(function () {
+			if (!isPaused) {
+				$(".job-chat").scrollTop($(".job-chat")[0].scrollHeight);
 			}
 		}, 500);
 	}

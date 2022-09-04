@@ -421,7 +421,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="job">
+		<div class="job ">
 			<div class="container">
 				<div class="job-wrapp">
 					<div class="job-coll">
@@ -443,7 +443,7 @@
 										Радиосвязь с пожарным расчётом
 									</div>
 									<div class="job-dialog-chat">
-										Выехали на вызов, следуем к месту происшествия
+		
 									</div>
 								</div>
 							</div>
@@ -458,42 +458,37 @@
 									Не знаете, что делать? Загляните в справочник
 								</div>
 							</div>
-							<div class="job-control-subtitle">
-								Статус 1/5
+							<div class="job-control-subtitle status-info">
+								Статус 0/5
 							</div>
 							<div class="job-control-row job-control-start ">
-								<button class="button-click job-btn" data-error="standart-error" data-indicator="complaints"
-									data-info="temperature">
+								<button class="button-click job-btn" data-answer="Следуем к месту" data-block="status">
 									<span>
 										Следуем к месту
 									</span>
 								</button>
-								<button class="button-click job-btn" data-error="standart-error" data-indicator="complaints"
-									data-info="temperature">
+								<button class="button-click job-btn" data-answer="Работу закончили" data-block="status">
 									<span>
 										Работу закончили
 									</span>
 								</button>
-								<button class="button-click job-btn" data-error="standart-error" data-indicator="complaints"
-									data-info="temperature">
+								<button class="button-click job-btn" data-answer="В части готов" data-block="status">
 									<span>
 										В части готов
 									</span>
 								</button>
-								<button class="button-click job-btn" data-error="standart-error" data-indicator="complaints"
-									data-info="temperature">
+								<button class="button-click job-btn" data-answer="Прибыли" data-block="status">
 									<span>
 										Прибыли
 									</span>
 								</button>
-								<button class="button-click job-btn" data-error="standart-error" data-indicator="complaints"
-									data-info="temperature">
+								<button class="button-click job-btn" data-answer="Возвращение в подразделение"
+									data-block="status">
 									<span>
 										Возвращение в подразделение
 									</span>
 								</button>
-								<button class="button-click job-btn" data-error="standart-error" data-indicator="complaints"
-									data-info="temperature">
+								<button class="button-click job-btn" data-answer="В части не готов" data-block="status">
 									<span>
 										В части не готов
 									</span>
@@ -501,25 +496,23 @@
 							</div>
 							<div class="job-control-wrapper">
 								<div class="job-wrapper-col">
-									<div class="job-control-subtitle">
+									<div class="job-control-subtitle path-car-info">
 										В пути следования 0/1
 									</div>
 									<div class="job-control-row">
-										<button class="button-click job-btn" data-error="standart-error"
-											data-indicator="complaints" data-info="temperature">
+										<button class="button-click job-btn" data-answer="Проверка связи" data-block="path-car">
 											<span>
 												Проверка связи
 											</span>
 										</button>
-										<button class="button-click job-btn" data-error="standart-error"
-											data-indicator="complaints" data-info="temperature">
+										<button class="button-click job-btn" data-answer="Задержка на светофоре"
+											data-block="path-car">
 											<span>
 												Задержка на светофоре
 											</span>
 										</button>
 		
-										<button class="button-click job-btn" data-error="standart-error"
-											data-indicator="complaints" data-info="temperature">
+										<button class="button-click job-btn" data-answer="В пробке" data-block="path-car">
 											<span>
 												В пробке
 											</span>
@@ -529,25 +522,24 @@
 									</div>
 								</div>
 								<div class="job-wrapper-col">
-									<div class="job-control-subtitle">
+									<div class="job-control-subtitle completion-info">
 										Завершение 0/1
 									</div>
 									<div class="job-control-row">
-										<button class="button-click job-btn" data-error="standart-error"
-											data-indicator="complaints" data-info="temperature">
+										<button class="button-click job-btn" data-answer="Ничего не обнаружили"
+											data-block="completion">
 											<span>
 												Ничего не обнаружено
 											</span>
 										</button>
-										<button class="button-click job-btn" data-error="standart-error"
-											data-indicator="complaints" data-info="temperature">
+										<button class="button-click job-btn" data-answer="Ликвидировано"
+											data-block="completion">
 											<span>
 												Ликвидировано
 											</span>
 										</button>
 		
-										<button class="button-click job-btn" data-error="standart-error"
-											data-indicator="complaints" data-info="temperature">
+										<button class="button-click job-btn" data-answer="Локализовано" data-block="completion">
 											<span>
 												Локализовано
 											</span>
@@ -563,84 +555,6 @@
 							Информационная система гарнизона
 						</div>
 						<div class="job-chat">
-		
-		
-							<div class="main-chat-row">
-								<div class="avatar-box">
-									<img src="./img/job/job-disp.png" alt="" class="avatar">
-								</div>
-								<div class="main-chat-coll">
-									<div class="main-chat-head">
-										<div class="main-chat-name">
-											Единая диспетчерская
-										</div>
-										<div class="main-chat-time">
-											10:12
-										</div>
-									</div>
-									<div class="main-chat-text">
-										Информация направлена
-									</div>
-								</div>
-							</div>
-		
-							<div class="main-chat-row">
-								<div class="avatar-box">
-									<img src="./img/main/dispatcher.png" alt="" class="avatar">
-								</div>
-								<div class="main-chat-coll">
-									<div class="main-chat-head">
-										<div class="main-chat-name">
-											Диспетчер 24 ПЧ
-										</div>
-										<div class="main-chat-time">
-											10:12
-										</div>
-									</div>
-									<div class="main-chat-text">
-										Информация принята
-									</div>
-								</div>
-							</div>
-		
-							<div class="main-chat-error">
-								<div class="main-error-row">
-									<div class="main-error-coll">
-										<h3 class="main-error-title">
-											Тревога
-										</h3>
-										<p class="main-error-text">
-											Ваша задача — поддерживать связь с пожарным расчётом по рации и фиксировать всю
-											поступающую от него информацию в системе. Следите за сообщениями и выбирайте
-											подходящие варианты действий.
-										</p>
-		
-									</div>
-									<div class="avatar-box">
-										<img src="./img/main/error.png" alt="" class="avatar">
-									</div>
-								</div>
-							</div>
-		
-							<div class="main-chat-row">
-								<div class="avatar-box">
-									<img src="./img/main/dispatcher.png" alt="" class="avatar">
-								</div>
-								<div class="main-chat-coll">
-									<div class="main-chat-head">
-										<div class="main-chat-name">
-											Диспетчер 24 ПЧ
-										</div>
-										<div class="main-chat-time">
-											10:55
-										</div>
-									</div>
-									<div class="main-chat-text">
-										Следуем к месту происшествия
-									</div>
-								</div>
-							</div>
-		
 		
 		
 						</div>
@@ -666,22 +580,6 @@
 				</div>
 				<img src="./img/job/job-popup.png" alt="" class="job-popup-img">
 			</div>
-		</div>
-		
-		
-		<div class="error">
-			<div class="error-box-img">
-				<img src="./img/error.svg" alt="" class="error-img">
-			</div>
-			<div class="error-coll">
-				<h3 class="error-title">
-					Ой, это неверный вариант!
-				</h3>
-				<p class="error-text">
-					Попробуйте другой или загляните в справочник
-				</p>
-			</div>
-		
 		</div>
 		<div class="accidents final">
 			<div class="container">
